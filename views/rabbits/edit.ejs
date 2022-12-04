@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Edit Board</h1>
+    <div class="col-6 offset-3">
+        <form action="/rabbits/<%=board._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="board[title]" required
+                    value="<%=board.title %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="board[image]" required value="<%=board.image %>">
+                <div class="invalid-feedback">Invalid Input</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description"
+                    name="board[description]" required><%= board.description%></textarea>
+                <div class="invalid-feedback">Invalid Input
+                </div>            
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Update Board</button>
+            </div>
+        </form>
+        <a href="/rabbits/<%= board._id%>">Back To RabbitBoard</a>
+
+    </div>
+</div>
