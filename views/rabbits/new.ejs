@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">New Board</h1>
+    <div class="col-6 offset-3">
+        <form action="/rabbits" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="board[title]" required>
+                <div class="invalid-feedback">Invalid Input
+                </div>
+            </div>
+            <div class="mb-5">
+                <label class="form-label" for="description">Main-text</label>
+                <textarea class="form-control" type="text" id="description" name="board[description]" required></textarea>
+                <div class="invalid-feedback">Invalid Input
+                </div>
+            </div>
+            <div class="mb-5">
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Input image</span>
+                        <span class="form-file-button">Find image</span>
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Post</button>
+            </div>
+        </form>
+        <a href="/rabbits">All Boards</a>
+    </div>
+</div>
+
